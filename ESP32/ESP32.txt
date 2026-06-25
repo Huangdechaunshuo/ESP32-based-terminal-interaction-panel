@@ -6,6 +6,8 @@ MPU6050 ------------->      int   MPU6050_Angle         // 角度
         ------------->      int   MPU6050_Acceleration  // 加速度
 
 /*****  ESP32-S3 串口数据帧格式  *****/
+波特率9600bps   8个数据位   1个停止位   无校验
+
 接收格式 ------------>  [光强,温度,湿度,角度,加速度]
 sscanf(RX_DATA,"[%d,%.2f,%.2f,%d,%d]",&OPT101_Light,&DHT11_Temperature,
        &DHT11_Humidity,&MPU6050_Angle,&MPU6050_Acceleration);
