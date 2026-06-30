@@ -1,0 +1,19 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.extensionActivationMode": "always",
+  "idf.openOcdConfigs": [
+    "board/esp32s3-bridge.cfg"
+  ],
+  "idf.portWin": "COM7",
+  "idf.currentSetup": "D:/ESP-IDF/Espressif/frameworks/esp-idf-v5.5.4/",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32s3"
+  },
+  "clangd.path": "D:\\ESP-IDF\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=d:\\Visual Studio Code\\ESP32\\ESP32-based-terminal-interaction-panel\\ESP32\\ESP32_Project\\build"
+  ],
+  "idf.flashType": "UART"
+}

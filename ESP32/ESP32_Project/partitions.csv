@@ -1,0 +1,11 @@
+# 分区名, 类型, 子类型, 偏移, 大小
+nvs,        data, nvs,     0x9000,   0x6000
+phy_init,   data, phy,     0xF000,   0x1000
+factory,    app,  factory, 0x10000,  0x300000
+ui_res,     data, fat,     ,         0x200000
+storage,    data, fat,     ,         0x2F0000
+
+# NVS分区：存WIFI密码、蓝牙配对、串口/定时器配置、设备参数
+# Factory主固件分区：存放全部业务代码（LVGL+I2S+蓝牙WIFI+串口定时器）
+# storage FAT分区：本地音频缓存、运行日志、临时配置
+# ui_res FAT分区：LVGL字体、图片、图标UI资源

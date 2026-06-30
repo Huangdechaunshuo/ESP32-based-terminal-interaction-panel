@@ -1,0 +1,13 @@
+## IDF Component Manager Manifest File
+dependencies:
+  # ST7701S 屏幕驱动
+  espressif/esp_lcd_st7701: ^2.0.0
+  # GT911 触摸驱动
+  espressif/esp_lcd_touch_gt911: ^1.2.0
+
+  espressif/esp_lcd_panel_io_additions: ^1.0.0
+  # 用LVGL显示界面，加上lvgl组件
+  # espressif/lvgl: "~8.3.0"
+  # espressif/esp_lvgl_port: '~1.4.0' # LVGL接口
+  ## Required IDF version
+  # idf: "^5.0"

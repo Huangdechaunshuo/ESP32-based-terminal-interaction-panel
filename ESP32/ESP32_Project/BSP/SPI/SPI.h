@@ -1,0 +1,71 @@
+#ifndef __SPI_H__
+#define __SPI_H__
+
+#include "esp_lcd_st7701.h"
+#include "esp_lcd_panel_io.h"
+#include "esp_lcd_panel_ops.h"
+#include "esp_lcd_panel_vendor.h"
+#include "esp_lcd_panel_io_additions.h"
+#include "driver/gpio.h"
+#include "esp_err.h"
+#include "esp_log.h"
+#include <stdio.h>
+#include <stddef.h>
+
+// IO类型全局宏
+#define IO_TYPE_GPIO           0
+#define IO_TYPE_EXPANDER       1
+
+// 3线SPI引脚（ST7701寄存器初始化）
+#define EXAMPLE_LCD_IO_SPI_CS    GPIO_NUM_39
+#define EXAMPLE_LCD_IO_SPI_SCK   GPIO_NUM_48
+#define EXAMPLE_LCD_IO_SPI_SDO   GPIO_NUM_47
+
+// RGB同步控制引脚
+#define EXAMPLE_LCD_IO_RGB_DE    GPIO_NUM_18
+#define EXAMPLE_LCD_IO_RGB_PCLK  GPIO_NUM_21
+#define EXAMPLE_LCD_IO_RGB_VSYNC GPIO_NUM_17
+#define EXAMPLE_LCD_IO_RGB_HSYNC GPIO_NUM_16
+#define EXAMPLE_LCD_IO_RGB_DISP  GPIO_NUM_NC    // 背光LEDK
+#define EXAMPLE_LCD_IO_RST       GPIO_NUM_38    // LCD_RESET
+
+// RGB16位数据引脚 DATA0 ~ DATA15
+#define EXAMPLE_LCD_IO_RGB_DATA0  GPIO_NUM_11
+#define EXAMPLE_LCD_IO_RGB_DATA1  GPIO_NUM_12
+#define EXAMPLE_LCD_IO_RGB_DATA2  GPIO_NUM_13
+#define EXAMPLE_LCD_IO_RGB_DATA3  GPIO_NUM_14
+#define EXAMPLE_LCD_IO_RGB_DATA4  GPIO_NUM_0
+#define EXAMPLE_LCD_IO_RGB_DATA5  GPIO_NUM_8
+#define EXAMPLE_LCD_IO_RGB_DATA6  GPIO_NUM_20
+#define EXAMPLE_LCD_IO_RGB_DATA7  GPIO_NUM_3
+#define EXAMPLE_LCD_IO_RGB_DATA8  GPIO_NUM_46
+#define EXAMPLE_LCD_IO_RGB_DATA9  GPIO_NUM_9
+#define EXAMPLE_LCD_IO_RGB_DATA10 GPIO_NUM_10
+#define EXAMPLE_LCD_IO_RGB_DATA11 GPIO_NUM_4
+#define EXAMPLE_LCD_IO_RGB_DATA12 GPIO_NUM_5
+#define EXAMPLE_LCD_IO_RGB_DATA13 GPIO_NUM_6
+#define EXAMPLE_LCD_IO_RGB_DATA14 GPIO_NUM_7
+#define EXAMPLE_LCD_IO_RGB_DATA15 GPIO_NUM_15
+
+// #define EXAMPLE_LCD_IO_RGB_DATA0  GPIO_NUM_4
+// #define EXAMPLE_LCD_IO_RGB_DATA1  GPIO_NUM_3
+// #define EXAMPLE_LCD_IO_RGB_DATA2  GPIO_NUM_2
+// #define EXAMPLE_LCD_IO_RGB_DATA3  GPIO_NUM_1
+// #define EXAMPLE_LCD_IO_RGB_DATA4  GPIO_NUM_0
+// #define EXAMPLE_LCD_IO_RGB_DATA5  GPIO_NUM_10
+// #define EXAMPLE_LCD_IO_RGB_DATA6  GPIO_NUM_9
+// #define EXAMPLE_LCD_IO_RGB_DATA7  GPIO_NUM_8
+// #define EXAMPLE_LCD_IO_RGB_DATA8  GPIO_NUM_7
+// #define EXAMPLE_LCD_IO_RGB_DATA9  GPIO_NUM_6
+// #define EXAMPLE_LCD_IO_RGB_DATA10 GPIO_NUM_5
+// #define EXAMPLE_LCD_IO_RGB_DATA11 GPIO_NUM_15
+// #define EXAMPLE_LCD_IO_RGB_DATA12 GPIO_NUM_14
+// #define EXAMPLE_LCD_IO_RGB_DATA13 GPIO_NUM_13
+// #define EXAMPLE_LCD_IO_RGB_DATA14 GPIO_NUM_12
+// #define EXAMPLE_LCD_IO_RGB_DATA15 GPIO_NUM_11
+
+// 像素位宽
+#define EXAMPLE_LCD_BIT_PER_PIXEL 16
+void lcd_task(void);
+
+#endif
